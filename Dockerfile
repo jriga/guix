@@ -1,4 +1,4 @@
-FROM ubuntu:24.10 AS build
+FROM ubuntu:24.10
 
 RUN apt update && apt install -y wget gnupg xz-utils
 

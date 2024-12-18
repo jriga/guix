@@ -30,9 +30,14 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -f Dockerfile -t jriga/guix:ubuntu .
-          
+
+      # Build the Docker image with dynamic Guile version
+      - name: Tag Docker image
+        run: |
+          docker tag jriga/guix:ubuntu jriga/guix:latest
+
       # Push the Docker image to DockerHub
       - name: Push Docker image
         run: |
           docker push jriga/guix:ubuntu
-       
+          docker push jriga/guix:latest

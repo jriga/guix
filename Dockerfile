@@ -41,6 +41,8 @@ RUN chmod +x /guix-runner.sh
 # RUN --security=insecure sh -c '/guix-runner.sh guix pull && guix package --fallback -i nss-certs' \
 #         && sh -c '/guix-runner.sh guix gc && guix gc --optimize'
 
+RUN ./guix-runner.sh guix pull
+
 ENTRYPOINT ["/guix-runner.sh"]
 
 CMD ["guix --version"]
